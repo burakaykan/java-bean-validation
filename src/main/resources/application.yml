@@ -1,0 +1,29 @@
+server:
+  port: 7823
+  servlet:
+    context-path: /javax
+    session:
+      timeout: -1
+      cookie:
+        max-age: -1
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/javax?useUnicode=true&characterEncoding=UTF-8&verifyServerCertificate=false&useSSL=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username:
+    password:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  jackson:
+    default-property-inclusion: non_null
